@@ -1,7 +1,10 @@
 package com.wixsite.mupbam1.resume.coin20
 
+import android.content.Context
+import android.net.ConnectivityManager
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
@@ -42,8 +45,21 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        parseGson()
+        var network = isNetworkAvailable(this)
+        if (network==false){
 
+            Toast.makeText(this, getString(R.string.noNetwork), Toast.LENGTH_SHORT).show()
+        }else{
+            parseGson()
+        }
+    }
+
+    fun isNetworkAvailable(context: Context): Boolean {
+        // Network chek
+        val connectivityManager = context.getApplicationContext()
+            .getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val activeNetworkInfo = connectivityManager.activeNetworkInfo
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected
     }
 
     private fun parseGson() {

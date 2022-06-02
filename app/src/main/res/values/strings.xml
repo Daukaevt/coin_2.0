@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Coin2.0</string>
+    <string name="noNetwork">Out of network</string>
 </resources>
