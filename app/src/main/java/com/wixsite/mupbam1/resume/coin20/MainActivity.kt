@@ -20,6 +20,7 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.TextStyle
@@ -118,10 +119,21 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun LazyColumnDemo(coinDataList:MutableList<coin_dataItem>) {
+    val colorKingBlue=colorResource(id = R.color.KingBlue)
+    val colorBlue=colorResource(id = R.color.blue)
     Log.d(MyLog, "coinDataList.toString()$coinDataList")
 
-    LazyColumn(modifier = Modifier.fillMaxWidth()
-        .background(color = colorResource(R.color.KingBlue))
+    LazyColumn(modifier = Modifier
+        .fillMaxWidth()
+        //       .background(color = colorResource(R.color.KingBlue))
+        .background(
+            brush = Brush.linearGradient(
+                colors = listOf(
+                    colorKingBlue,
+                    colorBlue
+                )
+            )
+        )
     ) {
         items(items = coinDataList, itemContent = { item ->
             ItemColumn(coinDataitem = item)

@@ -8,7 +8,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="salad">#CBFFC9</color>
+    <color name="saladLight">#9BE398</color>
     <color name="darkGreen">#134600</color>
     <color name="KingBlue">#00269B</color>
+    <color name="blue">#BDCDFF</color>
     <color name="yellow">#FFF6AB</color>
 </resources>

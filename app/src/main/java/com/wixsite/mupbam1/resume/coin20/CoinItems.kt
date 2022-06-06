@@ -12,6 +12,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
@@ -25,8 +26,11 @@ import com.wixsite.mupbam1.resume.coin20.data.coin_dataItem
 import java.text.DecimalFormat
 
 
+
 @Composable
 fun ItemColumn(coinDataitem: coin_dataItem) {
+    val colorSalad= colorResource(id = R.color.salad)
+    val colorYellow= colorResource(id = R.color.yellow)
        var isExpanded by remember {
         mutableStateOf(false)
     }
@@ -39,7 +43,15 @@ fun ItemColumn(coinDataitem: coin_dataItem) {
     ) {
         Box(modifier = Modifier
             .fillMaxSize()
-            .background(color = colorResource(R.color.salad))) {
+            .background(
+                brush = Brush.linearGradient(
+                    colors = listOf(
+                        colorSalad,
+                        colorYellow
+                    )
+                )
+            )
+        ) {
             Row(modifier = Modifier.fillMaxSize(),
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.SpaceBetween
