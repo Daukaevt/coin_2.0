@@ -16,7 +16,7 @@ import com.wixsite.mupbam1.resume.coin20.ui.theme.ItemColumn
 fun LazyColumnDemo(coinDataList:MutableList<coin_dataItem>) {
     val colorKingBlue= colorResource(id = R.color.KingBlue)
     val colorBlue= colorResource(id = R.color.blue)
-    Log.d(MyLog, "coinDataList.toString()$coinDataList")
+    Log.d(Const.MyLog, "coinDataList.toString()$coinDataList")
 
     LazyColumn(modifier = Modifier
         .fillMaxWidth()
