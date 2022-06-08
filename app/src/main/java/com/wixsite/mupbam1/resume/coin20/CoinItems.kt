@@ -136,7 +136,7 @@ fun ItemColumn(coinDataitem: coin_dataItem) {
                             )
                         }
                         Image(
-                            painter = rememberAsyncImagePainter(coinDataitem.image),
+                            painter = rememberAsyncImagePainter("https://upload.wikimedia.org/wikipedia/commons/5/53/100_USD_1934.jpg"),
                             contentDescription = "image",
                             modifier = Modifier
                                 .size(imageSize)
